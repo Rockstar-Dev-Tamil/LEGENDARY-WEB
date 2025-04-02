@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const menuIcon = document.querySelector('.menu-icon');
-    const navLinks = document.querySelector('.nav-links');
+        const menuIcon = document.querySelector(".menu-icon");
+        const navLinks = document.querySelector(".nav-links");
     
-    menuIcon.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
+        menuIcon.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+        });
+    
     
     // Show thank-you popup
     setTimeout(() => {

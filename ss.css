@@ -7,14 +7,6 @@ body {
     color: white;
 }
 
-
-/* Animated Background */
-@keyframes bg-animation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
 /* Navbar Styling */
 header {
     background: #000;
@@ -39,7 +31,6 @@ header {
     width: 100%;
     z-index: 1000;
 }
-
 
 /* Logo */
 .logo {
@@ -76,7 +67,7 @@ header {
     transition: 0.3s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .nav-links .active {
     background: #ff4081;
     border-radius: 5px;
     color: black;
@@ -88,6 +79,7 @@ header {
     border-radius: 5px;
     padding: 10px 15px;
     color: black !important;
+    font-weight: bold;
 }
 
 .join-btn:hover {
@@ -97,27 +89,31 @@ header {
 /* Mobile Menu Icon */
 .menu-icon {
     display: none;
-    font-size: 25px;
+    font-size: 28px;
     color: white;
     cursor: pointer;
+    padding: 10px;
 }
 
-/* Responsive Design */
+/* Responsive Navbar */
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
+        display: flex;
         flex-direction: column;
+        background: rgba(0, 0, 0, 0.95);
+        width: 100%;
         position: absolute;
         top: 60px;
-        right: 0;
-        background: rgba(0, 0, 0, 0.9);
-        width: 100%;
-        text-align: center;
+        left: 0;
         padding: 10px 0;
+        text-align: center;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.4s ease-in-out;
     }
 
     .nav-links.active {
-        display: flex;
+        max-height: 300px; /* Adjust height for smooth dropdown */
     }
 
     .nav-links li {
@@ -129,11 +125,10 @@ header {
     }
 }
 
-
-/* Community Section */
+/* Tamil SA-MP Community Section */
 .community-section {
     text-align: center;
-    padding: 100px 20px 50px; /* Added top padding to push content down */
+    padding: 120px 20px 50px; /* Added top padding to push content down */
 }
 
 .community-container {
@@ -147,6 +142,13 @@ header {
 
 .community-info {
     margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.community-info h2, .community-info h3 {
+    color: #ff4081;
 }
 
 /* Fix Logo Size & Alignment */
@@ -156,22 +158,6 @@ header {
     display: block;
     margin: 20px auto;
     border-radius: 10px;
-}
-
-/* Join Button */
-.join-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ff3b5c;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.join-btn:hover {
-    background-color: #ff1f45;
 }
 
 /* Footer */
